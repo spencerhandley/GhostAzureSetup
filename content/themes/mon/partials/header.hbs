@@ -1,0 +1,41 @@
+<div role='banner' class="header">   
+    
+    {{#if @blog.cover}}
+    <img class="cover" src="{{@blog.cover}}" alt="{{@blog.title}}" />
+    {{/if}}
+    
+    <div class="title">    
+        
+        {{#if @blog.logo}}
+        <div class="logo">
+            <a href="{{@blog.url}}">
+            <img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+        </div>
+        {{/if}}
+        
+        <h1 class="blog-title">
+            <a title="{{@blog.title}}" href='{{@blog.url}}'>
+                {{{@blog.title}}}
+            </a>
+        </h1>
+        
+        <div class="bar blog-description active">
+            <i class="ornament left"><i></i><i></i></i>
+            <p>{{@blog.description}}</p>
+            <i class="ornament right"><i></i><i></i></i>
+        </div>
+        
+    </div>
+    
+    <div class="arrow">
+        <div class="arrow-wrapper">
+            <div class="scroll-down icon-down-open"></div>
+            <div class="loader"></div>
+        </div>
+    </div>
+    
+    <div class="mobile-cover"></div>
+</div>	
+
+
+

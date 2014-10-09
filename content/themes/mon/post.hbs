@@ -1,0 +1,137 @@
+{{!< default}}
+
+<div class="monument active">
+    <div class="monument-bar">
+        <i class="ornament left"><i></i><i></i></i>
+        
+        <div class="wrapper">
+            <div class="col-group">
+                <div class="slide-header col-mb-52 col-mb-offset-0 col-50 col-offset-1">
+                    <a class="icon-level-up" href="{{@blog.url}}"></a>
+                    {{#if @blog.logo}}
+                        <a class="logo" href="{{@blog.url}}">
+                            <img src="{{@blog.logo}}" alt="Blog Logo" />
+                        </a>
+                    {{/if}}
+                    <h1><a title="{{@blog.title}}" href='{{@blog.url}}'>{{{@blog.title}}}</a></h1>
+                    {{#if @blog.description}}
+                        <p>{{@blog.description}}</p>
+                    {{/if}}
+                    <ul class="nav dt">
+                        <div class="menu-trigger desktop icon-menu"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <i class="ornament right"><i></i><i></i></i>
+        
+    </div>
+</div>
+
+<div class="post-window">
+    <div class="overlay">
+        <div class="wrapper">
+            <div class="arrow-wrapper col-mb-52 col-mb-offset-0 col-49 col-offset-1">
+                <div class="arrow-down icon-down-open"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="post" role="main">
+    
+    {{#if @blog.cover}}
+    <img class="cover" src="{{@blog.cover}}" alt="{{@blog.title}}" />
+    {{/if}}
+    
+    {{#post}} 
+    <article class="article col-52" role="article" itemscope itemtype="http://schema.org/Article">
+        
+        <input class="geocomplete" value="{{author.location}}" disabled="disabled">
+        
+        <div class="wrapper">
+            <header class="post-header col-mb-44 col-mb-offset-0 col-30 col-offset-1">
+                <div class="post-meta">
+                    <time class="date" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date timeago="true"}}</time>
+                    <h1 class="post-title">
+                        {{title}}
+                    </h1>    
+                </div>
+            </header>
+            
+            <div id="post" class="post-content col-group col-mb-52 col-mb-offset-0 col-49 col-offset-1" itemprop="articleBody">
+                
+                <div class="content col-32 col-dt-33">
+                    {{content}}
+                </div>
+                
+                <footer class="post-footer col-17">
+                    {{#if tags}}
+                    <div class="post-tags"><span class="icon-tags"></span>{{tags separator=", "}}</div>
+                    {{/if}}
+
+                    {{#if author}}
+                    <div class="author">
+                        <address itemscope itemtype="http://schema.org/Person">
+                            {{#if author.image}}
+                                <div class="author-image" data="{{author.image}}"></div>
+                            {{/if}}
+                            <div class="author-meta"> 
+                                <!-- TODO: refine structure flexibility-->
+                                <span>AUTHOR</span>
+                                <h4 class="author-name">{{author.name}}</h4>
+                                {{#if author.website}}
+                                <div class="author-url"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
+                                {{/if}}
+                            </div>
+                        </address>
+                        <div class="author-bio">
+                            <p>{{author.bio}}</p>
+                        </div>
+                    </div>
+                    {{/if}}
+
+                    <div class="share-box">
+                        <span class="share">Share this post on: </span>
+                        <div class="share-links">
+                            <p><a class="share icon-twitter-bird" target="_blank" href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a></p>
+                            <p><a class="share icon-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">Facebook</a></p>
+                            <p><a class="share icon-gplus" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">Google+</a></p>        
+                        </div>
+                    </div>
+                    
+                </footer>
+                
+            </div>        
+        </div>
+        
+        <div class="disqus-wrapper">
+            <div class="wrapper">
+                <div id="disqus_thread" class="col-group col-mb-52 col-mb-offset-0 col-49 col-offset-2"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'ghostmonument'; // required: replace example with your forum shortname
+                    var disqus_identifier = '{{post.id}}';
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
+            </div>
+        </div>
+        
+    </article>
+    
+{{/post}}
+<a title="{{@blog.title}}" href='{{@blog.url}}' class="return-home col-52 col-offset-0">
+    <p class="icon-level-up">Go back</p>
+</a>
+
+</main>
+
+{{> footer}}

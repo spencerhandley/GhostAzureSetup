@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    {{! Document Settings }}
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    {{! Styles }}
+    <link rel="stylesheet" type="text/css" href="/assets/css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+
+    {{! Responsive Meta Tags }}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    {{ghost_head}}
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Open Sans:300,300italic,400,400italic,700', 'Source+Code+Pro:400', 'Oswald']
+        }
+      });
+    </script>
+
+    <script type="text/javascript"> !function(a){"use strict";function y(){u(!0)}var b={};a.respond=b,b.update=function(){};var c=[],d=function(){var b=!1;try{b=new a.XMLHttpRequest}catch(c){b=new a.ActiveXObject("Microsoft.XMLHTTP")}return function(){return b}}(),e=function(a,b){var c=d();c&&(c.open("GET",a,!0),c.onreadystatechange=function(){4!==c.readyState||200!==c.status&&304!==c.status||b(c.responseText)},4!==c.readyState&&c.send(null))},f=function(a){return a.replace(b.regex.minmaxwh,"").match(b.regex.other)};if(b.ajax=e,b.queue=c,b.unsupportedmq=f,b.regex={media:/@media[^\{]+\{([^\{\}]*\{[^\}\{]*\})+/gi,keyframes:/@(?:\-(?:o|moz|webkit)\-)?keyframes[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,comments:/\/\*[^*]*\*+([^/][^*]*\*+)*\//gi,urls:/(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,findStyles:/@media *([^\{]+)\{([\S\s]+?)$/,only:/(only\s+)?([a-zA-Z]+)\s?/,minw:/\(\s*min\-width\s*:\s*(\s*[0-9\.]+)(px|em)\s*\)/,maxw:/\(\s*max\-width\s*:\s*(\s*[0-9\.]+)(px|em)\s*\)/,minmaxwh:/\(\s*m(in|ax)\-(height|width)\s*:\s*(\s*[0-9\.]+)(px|em)\s*\)/gi,other:/\([^\)]*\)/g},b.mediaQueriesSupported=a.matchMedia&&null!==a.matchMedia("only all")&&a.matchMedia("only all").matches,!b.mediaQueriesSupported){var q,r,s,g=a.document,h=g.documentElement,i=[],j=[],k=[],l={},m=30,n=g.getElementsByTagName("head")[0]||h,o=g.getElementsByTagName("base")[0],p=n.getElementsByTagName("link"),t=function(){var a,b=g.createElement("div"),c=g.body,d=h.style.fontSize,e=c&&c.style.fontSize,f=!1;return b.style.cssText="position:absolute;font-size:1em;width:1em",c||(c=f=g.createElement("body"),c.style.background="none"),h.style.fontSize="100%",c.style.fontSize="100%",c.appendChild(b),f&&h.insertBefore(c,h.firstChild),a=b.offsetWidth,f?h.removeChild(c):c.removeChild(b),h.style.fontSize=d,e&&(c.style.fontSize=e),a=s=parseFloat(a)},u=function(b){var c="clientWidth",d=h[c],e="CSS1Compat"===g.compatMode&&d||g.body[c]||d,f={},l=p[p.length-1],o=(new Date).getTime();if(b&&q&&m>o-q)return a.clearTimeout(r),r=a.setTimeout(u,m),void 0;q=o;for(var v in i)if(i.hasOwnProperty(v)){var w=i[v],x=w.minw,y=w.maxw,z=null===x,A=null===y,B="em";x&&(x=parseFloat(x)*(x.indexOf(B)>-1?s||t():1)),y&&(y=parseFloat(y)*(y.indexOf(B)>-1?s||t():1)),w.hasquery&&(z&&A||!(z||e>=x)||!(A||y>=e))||(f[w.media]||(f[w.media]=[]),f[w.media].push(j[w.rules]))}for(var C in k)k.hasOwnProperty(C)&&k[C]&&k[C].parentNode===n&&n.removeChild(k[C]);k.length=0;for(var D in f)if(f.hasOwnProperty(D)){var E=g.createElement("style"),F=f[D].join("\n");E.type="text/css",E.media=D,n.insertBefore(E,l.nextSibling),E.styleSheet?E.styleSheet.cssText=F:E.appendChild(g.createTextNode(F)),k.push(E)}},v=function(a,c,d){var e=a.replace(b.regex.comments,"").replace(b.regex.keyframes,"").match(b.regex.media),g=e&&e.length||0;c=c.substring(0,c.lastIndexOf("/"));var h=function(a){return a.replace(b.regex.urls,"$1"+c+"$2$3")},k=!g&&d;c.length&&(c+="/"),k&&(g=1);for(var l=0;g>l;l++){var m,n,o,p;k?(m=d,j.push(h(a))):(m=e[l].match(b.regex.findStyles)&&RegExp.$1,j.push(RegExp.$2&&h(RegExp.$2))),o=m.split(","),p=o.length;for(var q=0;p>q;q++)n=o[q],f(n)||i.push({media:n.split("(")[0].match(b.regex.only)&&RegExp.$2||"all",rules:j.length-1,hasquery:n.indexOf("(")>-1,minw:n.match(b.regex.minw)&&parseFloat(RegExp.$1)+(RegExp.$2||""),maxw:n.match(b.regex.maxw)&&parseFloat(RegExp.$1)+(RegExp.$2||"")})}u()},w=function(){if(c.length){var b=c.shift();e(b.href,function(c){v(c,b.href,b.media),l[b.href]=!0,a.setTimeout(function(){w()},0)})}},x=function(){for(var b=0;b<p.length;b++){var d=p[b],e=d.href,f=d.media,g=d.rel&&"stylesheet"===d.rel.toLowerCase();e&&g&&!l[e]&&(d.styleSheet&&d.styleSheet.rawCssText?(v(d.styleSheet.rawCssText,e,f),l[e]=!0):(!/^([a-zA-Z:]*\/\/)/.test(e)&&!o||e.replace(RegExp.$1,"").split("/")[0]===a.location.host)&&("//"===e.substring(0,2)&&(e=a.location.protocol+e),c.push({href:e,media:f})))}w()};x(),b.update=x,b.getEmValue=t,a.addEventListener?a.addEventListener("resize",y,!1):a.attachEvent&&a.attachEvent("onresize",y)}}(this);   </script>
+
+</head>
+
+<body class="{{body_class}}">
+
+    <div class="meta-overlay"></div>    
+    
+    <div class="header-content">
+        <div class="wrapper">
+            <div class="meta-header col-group col-mb-52 col-mb-offset-0 col-50 col-offset-1">
+                <!-- INFO: Insert your own about text here (or use any other title and content you like) -->
+                <h3>About</h3>                                      
+                <p>This theme is a monument of everything you want it to be. Claim it for your own blog and let it honor your great content in a beautiful and responsive way. Monument is based on careful design choices and has been refined a lot to provide a great experience for your readers. It's been fun developing this theme. Please let me know about issues and suggestions to improve it.</p>
+                <!-- INFO: Change the links to match your social network profiles -->
+                <div class="meta-icons">
+                    <a class="button icon-gplus" target="_blank" href="https://plus.google.com/"></a>
+                    <a class="button icon-twitter-bird" target="_blank" href="https://twitter.com/"></a>
+                    <a class="button icon-facebook" target="_blank" href="https://www.facebook.com/"></a>
+                    <!-- More social profile icons:
+                    <a class="button icon-linkedin" target="_blank" href=""></a>
+                    <a class="button icon-vimeo" target="_blank" href=""></a>
+                    <a class="button icon-ebay" target="_blank" href=""></a>
+                    <a class="button icon-soundcloud" target="_blank" href=""></a>
+                    <a class="button icon-email" target="_blank" href=""></a>
+                    <a class="button icon-github" target="_blank" href=""></a>
+                    <a class="button icon-skype" target="_blank" href=""></a>
+                    <a class="button icon-lastfm" target="_blank" href=""></a>
+                    <a class="button icon-spotify" target="_blank" href=""></a>
+                    <a class="button icon-xing" target="_blank" href=""></a>
+                    <a class="button icon-foursquare" target="_blank" href=""></a>
+                    <a class="button icon-pinterest" target="_blank" href=""></a>
+                    <a class="button icon-pocket" target="_blank" href=""></a>   
+                    -->                 
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    {{{body}}}
+
+    {{ghost_foot}}
+    
+    {{! Script }}
+    <script>
+        var maxPages = parseInt('{{pagination.pages}}');
+    </script>
+    <script type="text/javascript" src="/assets/js/all.min.js"></script>
+    
+</body>
+
+</html>
